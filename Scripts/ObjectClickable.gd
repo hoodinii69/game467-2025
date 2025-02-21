@@ -15,3 +15,5 @@ class_name Clickable
 
 #Signal to connect to main when clicked
 signal is_clicked
+#Signal to tell UI stuff to go away when nothing is clicked
+signal isnt_clicked

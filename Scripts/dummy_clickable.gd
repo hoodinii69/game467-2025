@@ -19,8 +19,10 @@ func _on_mouse_exited():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and selected and event.pressed:
-			print("Clicked a clickable")
 			#Emit a signal which main will listen to
 			$Clickable.is_clicked.emit()
 		if event.button_index == MOUSE_BUTTON_RIGHT and selected and event.pressed:
+			#In case we want to do something with right click????
 			print("Right clicked a clickable")
+		#Make this a signal or a function in the control ui rn this is BAD	
+		elif selected == false: $Clickable.isnt_clicked.emit()

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qpg1"]
 size = Vector2(80, 80)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Item"]]
 input_pickable = true
 script = ExtResource("1_00cur")
 
