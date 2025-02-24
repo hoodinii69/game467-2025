@@ -7,10 +7,12 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5wbwr")
 
-[node name="ClickableOptions" type="VBoxContainer" parent="."]
+[node name="ClickableOptions" type="VBoxContainer" parent="." node_paths=PackedStringArray("Main")]
+visible = false
 offset_right = 65.0
 offset_bottom = 101.0
 script = ExtResource("2_647cv")
+Main = NodePath("..")
 
 [node name="Inspect" type="Button" parent="ClickableOptions"]
 layout_mode = 2
@@ -28,4 +30,4 @@ tooltip_text = "Strike up a conversation"
 text = "Talk"
 
 [node name="ObjectClickable" parent="." instance=ExtResource("1_8oicw")]
-position = Vector2(116, 55)
+position = Vector2(260, 213)
