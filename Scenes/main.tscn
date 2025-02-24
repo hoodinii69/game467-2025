@@ -1,18 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4vadqqj38k7g"]
+[gd_scene load_steps=13 format=3 uid="uid://b4vadqqj38k7g"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_5wbwr"]
 [ext_resource type="PackedScene" uid="uid://ddnyj3yf6gsgm" path="res://Scenes/test_clickable.tscn" id="1_8oicw"]
 [ext_resource type="Script" path="res://Scripts/ClickableOptions.gd" id="2_647cv"]
+[ext_resource type="Script" path="res://Resources/inspectable.gd" id="4_bi7mt"]
+[ext_resource type="Script" path="res://Resources/takeable.gd" id="4_fb3mb"]
+[ext_resource type="Script" path="res://Resources/talkable.gd" id="6_4unax"]
+
+[sub_resource type="Resource" id="Resource_btftq"]
+script = ExtResource("4_bi7mt")
+text = "I'm a collision box."
+show = true
+
+[sub_resource type="Resource" id="Resource_vygk8"]
+script = ExtResource("4_fb3mb")
+text = "You take the collision box."
+show = true
+
+[sub_resource type="Resource" id="Resource_jklfx"]
+script = ExtResource("6_4unax")
+text = PackedStringArray("A: You come here often?", "B: Nope!")
+show = true
+
+[sub_resource type="Resource" id="Resource_0glfi"]
+script = ExtResource("4_bi7mt")
+text = "I'm a different collision box."
+show = true
+
+[sub_resource type="Resource" id="Resource_i5mxj"]
+script = ExtResource("4_fb3mb")
+text = "Fine, I'll take this one too."
+show = true
+
+[sub_resource type="Resource" id="Resource_ie03k"]
+script = ExtResource("6_4unax")
+text = PackedStringArray()
+show = false
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5wbwr")
 
-[node name="ClickableOptions" type="VBoxContainer" parent="." node_paths=PackedStringArray("Main")]
+[node name="ClickableOptions" type="VBoxContainer" parent="."]
 visible = false
+z_index = 1
 offset_right = 65.0
 offset_bottom = 101.0
 script = ExtResource("2_647cv")
-Main = NodePath("..")
 
 [node name="Inspect" type="Button" parent="ClickableOptions"]
 layout_mode = 2
@@ -29,5 +62,23 @@ layout_mode = 2
 tooltip_text = "Strike up a conversation"
 text = "Talk"
 
-[node name="ObjectClickable" parent="." instance=ExtResource("1_8oicw")]
-position = Vector2(260, 213)
+[node name="Cancel" type="Button" parent="ClickableOptions"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="test_clickable" parent="." instance=ExtResource("1_8oicw")]
+position = Vector2(192, 414)
+inspectable_text = SubResource("Resource_btftq")
+takeable_text = SubResource("Resource_vygk8")
+talkable_text = SubResource("Resource_jklfx")
+
+[node name="Legally Distinct Clickable" parent="." instance=ExtResource("1_8oicw")]
+position = Vector2(409, 346)
+inspectable_text = SubResource("Resource_0glfi")
+takeable_text = SubResource("Resource_i5mxj")
+talkable_text = SubResource("Resource_ie03k")
+
+[connection signal="pressed" from="ClickableOptions/Inspect" to="ClickableOptions" method="_on_inspect_pressed"]
+[connection signal="pressed" from="ClickableOptions/Take" to="ClickableOptions" method="_on_take_pressed"]
+[connection signal="pressed" from="ClickableOptions/Talk" to="ClickableOptions" method="_on_talk_pressed"]
+[connection signal="pressed" from="ClickableOptions/Cancel" to="ClickableOptions" method="_on_cancel_pressed"]
