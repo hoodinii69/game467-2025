@@ -57,7 +57,7 @@ script = ExtResource("1_5wbwr")
 
 [node name="ClickableOptions" type="VBoxContainer" parent="."]
 visible = false
-z_index = 1
+top_level = true
 offset_right = 65.0
 offset_bottom = 101.0
 script = ExtResource("2_647cv")
