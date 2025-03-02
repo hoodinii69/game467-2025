@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4vadqqj38k7g"]
+[gd_scene load_steps=19 format=3 uid="uid://b4vadqqj38k7g"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_5wbwr"]
 [ext_resource type="PackedScene" uid="uid://ddnyj3yf6gsgm" path="res://Scenes/empty_clickable.tscn" id="1_8oicw"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Resources/inspectable.gd" id="4_bi7mt"]
 [ext_resource type="Script" path="res://Resources/takeable.gd" id="4_fb3mb"]
 [ext_resource type="Script" path="res://Resources/talkable.gd" id="6_4unax"]
+[ext_resource type="PackedScene" uid="uid://dkt4alowy0xo1" path="res://Scenes/character.tscn" id="7_ijliu"]
+[ext_resource type="PackedScene" uid="uid://bvnv6348g0bw4" path="res://Scenes/inventory_item.tscn" id="8_6sgw2"]
+[ext_resource type="Texture2D" uid="uid://06xexhbo8g18" path="res://Images/icon.svg" id="9_rpq4y"]
 
 [sub_resource type="Resource" id="Resource_btftq"]
 script = ExtResource("4_bi7mt")
@@ -98,6 +101,12 @@ position = Vector2(293, 190)
 inspectable_text = SubResource("Resource_5updc")
 takeable_text = SubResource("Resource_snrj4")
 talkable_text = SubResource("Resource_i7wg7")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_ijliu")]
+
+[node name="Inventory_item" parent="." instance=ExtResource("8_6sgw2")]
+position = Vector2(80, 44)
+item_texture = ExtResource("9_rpq4y")
 
 [connection signal="pressed" from="ClickableOptions/Inspect" to="ClickableOptions" method="_on_inspect_pressed"]
 [connection signal="pressed" from="ClickableOptions/Take" to="ClickableOptions" method="_on_take_pressed"]
