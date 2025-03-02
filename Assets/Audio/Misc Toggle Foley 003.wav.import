@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sd512gca5bq2"
+path="res://.godot/imported/Misc Toggle Foley 003.wav-6d2368729c12c6908b06cc79ae6b1821.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Misc Toggle Foley 003.wav"
+dest_files=["res://.godot/imported/Misc Toggle Foley 003.wav-6d2368729c12c6908b06cc79ae6b1821.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
