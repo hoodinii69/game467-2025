@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Resources/inspectable.gd" id="4_bi7mt"]
 [ext_resource type="Script" path="res://Resources/takeable.gd" id="4_fb3mb"]
 [ext_resource type="Script" path="res://Resources/talkable.gd" id="6_4unax"]
-[ext_resource type="PackedScene" uid="uid://dkt4alowy0xo1" path="res://Scenes/character.tscn" id="7_ijliu"]
+[ext_resource type="PackedScene" uid="uid://dkt4alowy0xo1" path="res://Scripts/character.tscn" id="7_ijliu"]
 [ext_resource type="PackedScene" uid="uid://bvnv6348g0bw4" path="res://Scenes/inventory_item.tscn" id="8_6sgw2"]
 [ext_resource type="Texture2D" uid="uid://cpsjaebpas6w4" path="res://Assets/Assets/Icons/icon1.png" id="9_sge2j"]
 
@@ -106,7 +106,10 @@ talkable_text = SubResource("Resource_i7wg7")
 
 [node name="Inventory_item" parent="." instance=ExtResource("8_6sgw2")]
 position = Vector2(29, 20)
+item_type = "Enhance"
+item_name = "Potion"
 item_texture = ExtResource("9_sge2j")
+item_effect = "Hey Its Me Goku"
 
 [connection signal="pressed" from="ClickableOptions/Inspect" to="ClickableOptions" method="_on_inspect_pressed"]
 [connection signal="pressed" from="ClickableOptions/Take" to="ClickableOptions" method="_on_take_pressed"]
