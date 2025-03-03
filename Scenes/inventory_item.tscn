@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvnv6348g0bw4"]
+[gd_scene load_steps=3 format=3 uid="uid://bvnv6348g0bw4"]
 
 [ext_resource type="Script" path="res://Scripts/inventory_item.gd" id="1_fvgvg"]
-[ext_resource type="Texture2D" uid="uid://cpsjaebpas6w4" path="res://Assets/Assets/Icons/icon1.png" id="2_n6lfn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4k7kj"]
 
@@ -14,7 +13,6 @@ script = ExtResource("1_fvgvg")
 shape = SubResource("CircleShape2D_4k7kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_n6lfn")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

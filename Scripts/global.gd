@@ -13,7 +13,7 @@ var player_node: Node = null
 
 func _ready():
 	#initialize the inventory with 30 slots (spread over 9 slots per row)
-	inventory.resize(30)
+	inventory.resize(10)
 
 func add_item(item):
 	for i in range(inventory.size()):

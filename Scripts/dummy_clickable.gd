@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Interactable
+
 
 #We use custom resources for the data, check their scripts for more info
 @export var inspectable_text = Inspectable
